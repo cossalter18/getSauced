@@ -7,7 +7,7 @@ const router = express.Router();
  */
 
 router.get('/', (req, res) => {
-  const queryText = `SELECT * FROM "post";`;
+  const queryText = `SELECT * FROM "posts";`;
   pool
     .query(queryText)
     .then((response) => {
