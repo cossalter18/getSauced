@@ -5,36 +5,73 @@ import { TextField } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import {TextareaAutosize} from '@material-ui/core'
+import './NewPost.css'
 
 const myTheme = createMuiTheme({
   palette: {
     primary: {
-        main: "#3f51b5"
-    }
-  }
+      main: "#3f51b5",
+    },
+  },
 }); // end theme
 
 class NewPost extends Component {
+
+    state = {
+        newPost: {
+            title: '',
+            body: '',
+            userId: this.props.reduxState.user.id
+        }
+    }
+
+  handleChange = (event, property) => {
+    console.log(event.target.value);
+    this.setState({
+        newPost: {
+            ...this.state.newPost,
+            [property]: event.target.value
+        }
+    });
+  };
+
+  postBlog = () => {
+    console.log("clicked");
+    this.props.dispatch({
+        type: 'NEW_POST',
+        payload: this.state.newPost
+    })
+  };
+
   render() {
     return (
       <div>
         <h2>New Post</h2>
-        <div id="inputs">
+        <div className="inputs">
           <MuiThemeProvider theme={myTheme}>
+            <TextField
+              type="text"
+              color="primary"
+              name="title"
+              placeholder="Title"
+              onChange={(event) => this.handleChange(event, "title")}
+            ></TextField>
+            <br/>
+            <TextareaAutosize
+            aria-label="minimum height" 
+            rows={25} 
+            placeholder ="Start typing..."
+            onChange={(event) => this.handleChange(event, "body")}/>
             
-              <TextField
-                type="text"
-                color="primary"
-                name="title"
-                placeholder="Title"
-              ></TextField>
-              <TextField
-                type="text"
-                color="primary"
-                name="body"
-                placeholder="Post"
-              ></TextField>
-            
+            <Button
+              className="button"
+              color="primary"
+              variant="contained"
+              onClick={this.postBlog}
+            >
+              Post!
+            </Button>
           </MuiThemeProvider>
         </div>
       </div>

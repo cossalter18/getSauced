@@ -25,7 +25,17 @@ router.get('/', (req, res) => {
  */
 
 router.post("/", (req, res) => {
-
+const newPost = `INSERT INTO "posts"("title", "body", "id")
+VALUES ($1, $2, $3);`;
+console.log("!!!!!!!!!", req.body)
+const values = [req.body.title, req.body.body, req.user.id]
+pool.query(newPost, values)
+.then((response) => {
+  res.sendStatus(201)
+})
+.catch((error) => {
+  console.log('error in router POST', error);
+})
 
 });
 
