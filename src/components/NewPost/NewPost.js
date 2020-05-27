@@ -50,7 +50,7 @@ class NewPost extends Component {
         <h2>New Post</h2>
         <div className="inputs">
           <MuiThemeProvider theme={myTheme}>
-            <TextField
+            <TextField className="title"
               type="text"
               color="primary"
               name="title"
@@ -58,7 +58,7 @@ class NewPost extends Component {
               onChange={(event) => this.handleChange(event, "title")}
             ></TextField>
             <br/>
-            <TextareaAutosize
+            <TextField className="body"
             aria-label="minimum height" 
             rows={25} 
             placeholder ="Start typing..."
