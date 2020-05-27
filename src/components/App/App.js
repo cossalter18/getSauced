@@ -17,6 +17,8 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import BlogPost from '../BlogPost/BlogPost';
 import NewPost from '../NewPost/NewPost'
+import UserFav from '../UserFav/UserFav'
+import Profile from '../Profile/Profile'
 
 import './App.css';
 
@@ -59,8 +61,18 @@ class App extends Component {
             />
             <ProtectedRoute
             exact
+            path="/favorite"
+            component={UserFav}
+            />
+            <ProtectedRoute
+            exact
             path="/new"
             component={NewPost}
+            />
+            <ProtectedRoute
+            exact
+            path="/profile"
+            component={Profile}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
