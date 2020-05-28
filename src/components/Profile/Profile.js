@@ -1,32 +1,31 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
+import { Field, reduxForm } from "redux-form";
 
 class Profile extends Component {
-
-  handleClick=()=>{
-    console.log('handleClick');
-    
-  }
   render() {
     return (
-      <>
-      <div className="welcome">
-        <h2>Update Your Info</h2>
-      </div>
-      <div className="profileInputs">
-        <input type="text" placeholder="First Name" name="fname"></input>
-        <input type="text" placeholder="Last Name" name="lname"></input>
-        <input type="text" placeholder="Email" name="email"></input>
-        <input type="text" placeholder="Zip" name="zip"></input>
-      </div>
-      <div>
-        <button className="profileButton" onClick={this.handleClick}>Re-Sauce!</button>
-      </div>
-      </>
+      <form onSubmit={this.props.handleSubmit}>
+        <div>
+          <label htmlFor="firstName">First Name</label>
+          <Field name="firstName" component="input" type="text" />
+        </div>
+        <div>
+          <label htmlFor="lastName">Last Name</label>
+          <Field name="lastName" component="input" type="text" />
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <Field name="email" component="input" type="email" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     );
   }
 }
 
-const putStateOnProps = (reduxState) => ({ reduxState });
-export default withRouter(connect(putStateOnProps)(Profile));
+Profile = reduxForm({
+  // a unique name for the form
+  form: "profile",
+})(Profile);
+
+export default Profile;
