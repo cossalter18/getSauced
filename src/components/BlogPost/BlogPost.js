@@ -17,6 +17,12 @@ class BlogPost extends Component {
     this.props.history.push('/new')
   };
 
+  handleClickFavorite = () => {
+    console.log('handleCLick for favorite');
+    
+  }
+
+
   //dispatch to watcher to get threads
 
   getThreads = () => {
@@ -27,20 +33,33 @@ class BlogPost extends Component {
     return (
       <div>
         <h3>
-          <b>Thread:</b>
-        </h3>
-        <div className="nav-right">
+          <div className="nav-right">
             <button className="newPost" onClick={this.handleClick}>
               New Post!
             </button>
-        </div>
-        <li>
-          <p>{JSON.stringify(this.props.reduxState.threadReducer)}</p>
-        </li>
+          </div>
+          <b>Thread:</b>
+          <p>{JSON.stringify(this.props.threadItems)}</p>
+          {this.props.threadItems.map((thread) =>{
+           return (
+             <div key={thread.id}>
+            <h2>{thread.title}</h2>
+            <h3>{thread.body}</h3>
+            <button onClick={this.handleClickFavorite}>Add to Favorites</button>
+          </div>
+           )
+          })}
+         
+        </h3>
+       
       </div>
     );
   }
 }
 
-const putStateOnProps = (reduxState) => ({ reduxState });
-export default withRouter(connect(putStateOnProps)(BlogPost));
+const reduxStateToProps = (reduxState) => {
+  return {
+    threadItems: reduxState.threadReducer
+  }
+}
+export default withRouter(connect(reduxStateToProps)(BlogPost));

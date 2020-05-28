@@ -22,7 +22,7 @@ class NewPost extends Component {
         newPost: {
             title: '',
             body: '',
-            userId: this.props.reduxState.user.id,
+            user_id: this.props.reduxState.user.id,
             username: this.props.reduxState.user.username
         }
     }
@@ -49,7 +49,7 @@ class NewPost extends Component {
     return (
       <div>
         <h2>New Post</h2>
-        <p>{JSON.stringify(this.props.reduxState.user.username)}</p>
+        <p>{JSON.stringify(this.props.reduxState.user)}</p>
         <div className="inputs">
           <MuiThemeProvider theme={myTheme}>
             <TextField className="title"
