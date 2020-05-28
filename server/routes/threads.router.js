@@ -7,7 +7,7 @@ const router = express.Router();
  */
 
 router.get('/', (req, res) => {
-  const queryText = `SELECT * FROM "posts";`;
+  const queryText = `SELECT * FROM "post";`;
   pool
     .query(queryText)
     .then((response) => {
@@ -39,10 +39,10 @@ router.get('/', (req, res) => {
  */
 
 router.post("/", (req, res) => {
-const newPost = `INSERT INTO "posts"("title", "body", "id")
-VALUES ($1, $2, $3);`;
+const newPost = `INSERT INTO "post"("title", "body", "id", username)
+VALUES ($1, $2, $3, $4);`;
 console.log("!!!!!!!!!", req.body)
-const values = [req.body.title, req.body.body, req.user.id]
+const values = [req.body.title, req.body.body, req.user.id, req.body.username]
 pool.query(newPost, values)
 .then((response) => {
   res.sendStatus(201)
