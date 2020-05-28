@@ -6,14 +6,14 @@ class UserFav extends Component {
 
     //we will render all the favorites here for the user
     componentDidMount = () => {
-      getFavorites();
+      // getFavorites();
     }
     
 
-getFavorites = () => {
-  this.props.dispatch({ type: "GET_FAVORITES"})
+// getFavorites = () => {
+//   this.props.dispatch({ type: "GET_FAVORITES"})
   
-}
+// }
 
   render() {
     return (
