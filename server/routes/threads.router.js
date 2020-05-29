@@ -39,10 +39,10 @@ router.get('/', (req, res) => {
  */
 
 router.post("/", (req, res) => {
-const newPost = `INSERT INTO "post"("title", "body", "id", user_id)
-VALUES ($1, $2, $3, $4);`;
+const newPost = `INSERT INTO "post"("title", "body", user_id)
+VALUES ($1, $2, $3);`;
 console.log("!!!!!!!!!", req.body)
-const values = [req.body.title, req.body.body, req.user.id, req.user.id]
+const values = [req.body.title, req.body.body, req.user.id]
 pool.query(newPost, values)
 .then((response) => {
   res.sendStatus(201)

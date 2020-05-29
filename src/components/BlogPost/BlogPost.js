@@ -32,8 +32,8 @@ class BlogPost extends Component {
 
   handleDelete = (event, thread) => {
     console.log('deleteClicked', thread.id);
-     if (this.props.reduxState.user.id === thread.id){
-       this.props.dispatch({type: 'DELETE_POST', payload: thread.user_id})
+     if (this.props.reduxState.user.id === thread.user_id){
+       this.props.dispatch({type: 'DELETE_POST', payload: thread.id})
      } else {
        alert('Trying to destroy someones sauce? Not cool...')
      }

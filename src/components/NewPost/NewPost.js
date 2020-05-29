@@ -20,6 +20,7 @@ class NewPost extends Component {
 
     state = {
         newPost: {
+          id: '',
             title: '',
             body: '',
             user_id: this.props.reduxState.user.id,
