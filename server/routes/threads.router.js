@@ -53,4 +53,18 @@ pool.query(newPost, values)
 
 });
 
+//DELETE SELECTED POST
+router.delete('/:id', (req, res) => {
+  console.log('!!!!!!!!!', req.params.id)
+  const thread = `DELETE FROM "post" WHERE "id" = $1;`;
+  pool.query(thread, [req.params.id])
+  .then((response) => {
+    res.sendStatus(200)
+  })
+  .catch((error) => {
+    console.log('ERROR DELETING!!!!!!', error);
+    res.sendStatus(500)
+    
+  })
+})
 module.exports = router;

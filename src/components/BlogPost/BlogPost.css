@@ -4,3 +4,35 @@
  
 }
 
+h2 {
+  cursor: pointer;
+}
+
+/* .container {
+   width: 75%;
+    height: 10rem;
+    margin: auto;
+    background-color:#4eafeb;
+    border-radius: 10px;
+} */
+
+
+.container {
+    box-sizing: border-box;
+    width: 75%;
+    height: 10rem;
+    margin: auto;
+    background-color:#4eafeb;
+    border-radius: 10px;
+}
+/* 
+.child {
+ flex: 1;
+    height: auto;
+    margin: auto;
+    border-color: red;
+    border-width: 10px;
+} */
+
+
+
