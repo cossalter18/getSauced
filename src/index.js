@@ -10,6 +10,9 @@ import rootSaga from './redux/sagas'; // imports ./redux/sagas/index.js
 
 import App from './components/App/App';
 
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import CardsPage from "./components/Cards/CardsPage"
+
 const sagaMiddleware = createSagaMiddleware();
 
 // this line creates an array of all of redux middleware you want to use
