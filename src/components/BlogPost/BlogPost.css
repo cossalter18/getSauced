@@ -8,6 +8,12 @@ h2 {
   cursor: pointer;
 }
 
+.button{
+  margin: 100px;
+  padding: 25px;
+}
+
+
 /* .container {
    width: 75%;
     height: 10rem;
@@ -21,10 +27,13 @@ h2 {
     box-sizing: border-box;
     width: 75%;
     height: 10rem;
-    margin: auto;
+    margin-bottom: 15px;
     background-color:#4eafeb;
     border-radius: 10px;
 }
+
+
+
 /* 
 .child {
  flex: 1;

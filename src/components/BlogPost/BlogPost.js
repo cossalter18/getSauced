@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import "./BlogPost.css";
+import {Button} from "react-bootstrap"
 import { Container } from '@material-ui/core'
 
 // This is one of our simplest components
@@ -30,11 +31,11 @@ class BlogPost extends Component {
 
   handleDelete = (event, thread) => {
     console.log('deleteClicked', thread.id);
-     if (this.props.reduxState.user.id === thread.user_id){
-       this.props.dispatch({type: 'DELETE_POST', payload: thread.id})
-     } else {
-       alert('Trying to destroy someones sauce? Not cool...')
-     }
+    if (this.props.reduxState.user.id === thread.user_id) {
+      this.props.dispatch({ type: 'DELETE_POST', payload: thread.id })
+    } else {
+      alert('Trying to destroy someones sauce? Not cool...')
+    }
   }
 
   handleEdit = () => {
@@ -55,7 +56,7 @@ class BlogPost extends Component {
     return (
       <div>
         <div className="nav-right">
-          <button className="newPost" onClick={this.handleClick}>
+          <button type="button" class="btn btn-link btn-sm">
             New Post!
             </button>
         </div>
@@ -63,20 +64,24 @@ class BlogPost extends Component {
         <p>{JSON.stringify(this.props.reduxState.threadReducer)}</p>
         {this.props.reduxState.threadReducer.map((thread) => {
           return (
-            <div className="container">
+            <>
+              <div className="container">
               <Container fixed >
                 <div className="child">
                   <div key={thread.id}>
                     <h2 onClick={this.handleClickShow}>{thread.title}</h2>
                     <p>{thread.body}</p>
                     <p>created by: {thread.created}</p>
+                    <div/>
                     <button onClick={this.handleClickFavorite}>Add to Favorites</button>
                     <button onClick={this.handleEdit}>Edit</button>
                     <button variant="danger" onClick={(event) => this.handleDelete(event, thread)}>Delete</button>
                   </div>
-                </div>
+              
+              </div>
               </Container>
             </div>
+            </>
           )
         }
         )}
