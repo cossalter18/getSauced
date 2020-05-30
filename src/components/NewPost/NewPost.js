@@ -59,7 +59,7 @@ class NewPost extends Component {
           <MuiThemeProvider theme={myTheme}>
             <div className='title'>
               <TextField className="title"
-                
+
                 type="text"
                 color="primary"
                 name="title"
@@ -69,17 +69,18 @@ class NewPost extends Component {
             </div>
             <br />
             <div>
-              <TextField className="body"
-                variant="outlined"
-                rows={10}
-                aria-label="minimum height"
-                placeholder="Ravioli Ravioli, give me the formuoli..."
-                onChange={(event) => this.handleChange(event, "body")} />
+              <textarea
+                className="body"
+                placeholder="Ravioli Ravioli, Give me the formuoli..."
+                rows={5}
+                rowsMax={5}
+                cols={100}
+              />
             </div>
             <Button className="postButton" onClick={this.postBlog}>Share the secrets</Button>
           </MuiThemeProvider>
         </div>
-        
+
       </div>
     );
   }
