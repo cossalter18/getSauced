@@ -12,13 +12,11 @@ import { actionChannel } from "redux-saga/effects";
 // or even care what the redux state is, so it doesn't need 'connect()'
 class BlogPost extends Component {
 
-  // state={
-  //   favorite: {
-  //     user_id: this.props.reduxState.user_id,
-  //     body: '',
-  //     title: '',
-  //   }
-  // }
+  state = {
+    user_id: '',
+    title: '',
+    body: '',
+  }
 
   componentDidMount() {
     this.getThreads();
@@ -29,9 +27,15 @@ class BlogPost extends Component {
     this.props.history.push('/new')
   };
 
-  handleClickFavorite = () => {
-    console.log('handleCLick for favorite', this.props.reduxState.threadReducer);
-    this.props.dispatch({type: "ADD_FAVORITE", payload: this.props.reduxState.threadReducer})
+  handleClickFavorite = (event, thread) => {
+    const {target: {value}} = event
+    this.setState({
+      user_id: value,
+      title: value,
+      body: value
+    })
+    console.log('handleCLick for favorite', thread.user_id);
+    this.props.dispatch({type: "ADD_FAVORITE", payload: this.state})
   }
 
   handleClickShow = () => {
@@ -84,7 +88,7 @@ class BlogPost extends Component {
                     <p>created by: {thread.created}</p>
                       </div>
                     <div/>
-                    <button onClick={this.handleClickFavorite}>Add to Favorites</button>
+                    <button onClick={(event) => this.handleClickFavorite(event, thread)}>Add to Favorites</button>
                     <button onClick={this.handleEdit}>Edit</button>
                     <button variant="danger" onClick={(event) => this.handleDelete(event, thread)}>Delete</button>
                   </div>

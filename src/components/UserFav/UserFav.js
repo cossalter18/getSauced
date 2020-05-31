@@ -9,9 +9,7 @@ import "./UserFav.css"
 
 class UserFav extends Component {
 
-  state = {
-    user_id: this.props.reduxState.threadReducer.user_id
-  }
+
 
   //we will render all the favorites here for the user
   componentDidMount = () => {
