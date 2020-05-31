@@ -12,6 +12,13 @@ import { actionChannel } from "redux-saga/effects";
 // or even care what the redux state is, so it doesn't need 'connect()'
 class BlogPost extends Component {
 
+  // state={
+  //   favorite: {
+  //     user_id: this.props.reduxState.user_id,
+  //     body: '',
+  //     title: '',
+  //   }
+  // }
 
   componentDidMount() {
     this.getThreads();
@@ -24,7 +31,7 @@ class BlogPost extends Component {
 
   handleClickFavorite = () => {
     console.log('handleCLick for favorite', this.props.reduxState.threadReducer);
-    this.props.dispatch({type: "ADD_FAVORITE", payload: this.state})
+    this.props.dispatch({type: "ADD_FAVORITE", payload: this.props.reduxState.threadReducer})
   }
 
   handleClickShow = () => {

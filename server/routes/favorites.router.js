@@ -3,10 +3,10 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 /**
- * GET route template
+ * GET route for favorites
  */
 router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM "favorites";`;
+    const queryText = `SELECT * FROM "favorites" WHERE "user_id" = "user_id;`;
     pool
         .query(queryText)
         .then((response) => {
@@ -19,9 +19,10 @@ router.get('/', (req, res) => {
 })
 
 /**
- * POST route template
+ * POST route for favorites
  */
 router.post('/', (req, res) => {
+    const queryText = `INSERT INTO "favorites" `
 
 });
 
