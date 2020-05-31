@@ -73,8 +73,9 @@ class NewPost extends Component {
                 className="body"
                 placeholder="Ravioli Ravioli, Give me the formuoli..."
                 rows={5}
-                rowsMax={5}
+                rowsmax={5}
                 cols={100}
+                onChange={(event) => this.handleChange(event, "body")}
               />
             </div>
             <Button className="postButton" onClick={this.postBlog}>Share the secrets</Button>

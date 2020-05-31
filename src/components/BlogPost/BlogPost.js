@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import "./BlogPost.css";
 import {Button} from "react-bootstrap"
 import { Container } from '@material-ui/core'
+import { actionChannel } from "redux-saga/effects";
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -22,7 +23,8 @@ class BlogPost extends Component {
   };
 
   handleClickFavorite = () => {
-    console.log('handleCLick for favorite');
+    console.log('handleCLick for favorite', this.props.reduxState.threadReducer);
+    this.props.dispatch({type: "ADD_FAVORITE", payload: this.state})
   }
 
   handleClickShow = () => {
@@ -43,7 +45,7 @@ class BlogPost extends Component {
 
   }
 
-
+  
   //dispatch to watcher to get threads
 
   getThreads = () => {
@@ -56,13 +58,13 @@ class BlogPost extends Component {
     return (
       <div>
         <div className="nav-right">
-          <button type="button" class="btn btn-link btn-sm">
+          <button type="button" onClick={this.handleClick} class="btn btn-link btn-sm">
             New Post!
             </button>
         </div>
         <b>Thread:</b>
         <p>{JSON.stringify(this.props.reduxState.threadReducer)}</p>
-        {this.props.reduxState.threadReducer.map((thread) => {
+        {this.props.reduxState.threadReducer.map((thread, i) => {
           return (
             <>
               <div className="container">
@@ -71,7 +73,9 @@ class BlogPost extends Component {
                   <div key={thread.id}>
                     <h2 onClick={this.handleClickShow}>{thread.title}</h2>
                     <p>{thread.body}</p>
+                    <div className="content">
                     <p>created by: {thread.created}</p>
+                      </div>
                     <div/>
                     <button onClick={this.handleClickFavorite}>Add to Favorites</button>
                     <button onClick={this.handleEdit}>Edit</button>

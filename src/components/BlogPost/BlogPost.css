@@ -8,6 +8,10 @@ h2 {
   cursor: pointer;
 }
 
+.content {
+  font-size: 10px;
+}
+
 .button{
   margin: 100px;
   padding: 25px;
@@ -30,6 +34,11 @@ h2 {
     margin-bottom: 15px;
     background-color:#4eafeb;
     border-radius: 10px;
+    white-space: pre-wrap;      
+   white-space: -moz-pre-wrap;   
+  
+    
+   word-wrap: break-word;   
 }
 
 

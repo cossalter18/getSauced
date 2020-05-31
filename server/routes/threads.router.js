@@ -22,18 +22,7 @@ router.get('/', (req, res) => {
 
 
 //Get all from favorites
-router.get('/', (req, res) => {
-  const queryText =`SELECT * FROM "favorites";`;
-  pool
-    .query(queryText)
-    .then((response) => {
-      console.log('!!!!!!!!!!!!!', response.rows)
-      res.send(response.rows)      
-    })
-    .catch((error) => {
-      console.log('ERROR IN FAVORITES QUERY', error);
-    })
-})
+
 /**
  * POST route template
  */

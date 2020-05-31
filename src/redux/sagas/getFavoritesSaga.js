@@ -3,9 +3,9 @@ import { put, takeEvery } from "redux-saga/effects";
 
 function* getFavorites() {
   try {
-    const response = yield axios.get("/api/threads");
-    console.log("++++++++++++++", response.data);
-    yield put({ type: "SET_THREADS", payload: response.data });
+    const response = yield axios.get("/api/favorites");
+    console.log("!!! FAVORITES !!! ========>", response.data);
+    yield put({ type: "SET_FAVORITES", payload: response.data });
   } catch (error) {
     console.log("Error in GET", error);
   }

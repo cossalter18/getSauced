@@ -5,6 +5,7 @@ import userSaga from './userSaga';
 import getThreadSaga from './getThreadsSaga'
 import newPostSaga from './newPostSaga'
 import deleteSaga from './deleteSaga'
+import getFavoritesSaga from './getFavoritesSaga'
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -19,6 +20,7 @@ export default function* rootSaga() {
     userSaga(),
     getThreadSaga(),
     newPostSaga(),
-    deleteSaga()
+    deleteSaga(),
+    getFavoritesSaga()
   ]);
 }
