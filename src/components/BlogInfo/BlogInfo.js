@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { Paper } from '@material-ui/core'
+import "./BlogInfo.css";
 
 class BlogInfo extends Component {
 
-componentDidMount(){
-    console.log('BLOGINFO COMPONENT DID MOUNT');
-    this.getPost()
-    
-}
+    componentDidMount() {
+        console.log('BLOGINFO COMPONENT DID MOUNT');
+        this.getPost()
 
-handleClick=()=>{
-    console.log('handleclick to go to back to blogs!!!!!', this.props.match.params.id);
-    this.props.history.push('/info')
-}
+    }
 
-getPost = () => {
-    console.log("IN GETPOST BLOGINFO.js", this.props.match.params.id);
-    this.props.dispatch({type: "GET_DETAILS", payload: this.props.match.params.id})
-}
+    handleClick = () => {
+        console.log('handleclick to go to back to blogs!!!!!', this.props.match.params.id);
+        this.props.history.push('/info')
+    }
 
+    getPost = () => {
+        console.log("IN GETPOST BLOGINFO.js", this.props.match.params.id);
+        this.props.dispatch({ type: "GET_DETAILS", payload: this.props.match.params.id })
+    }
+
+    handleEdit = (id) => {
+        console.log('Click Edit Button');
+        this.props.history.push(`/edit`)
+        
+    }
 
 
     render() {
@@ -28,18 +35,27 @@ getPost = () => {
                 <h2>Sauce-y</h2>
                 <button onClick={this.handleClick}>Back to posts</button>
                 <button onClick={this.handleEdit}>Edit</button>
-                
-                {this.props.reduxState.getDetailsReducer.map((thread) => {
-                    return (
-                        <div key={thread.id}>
-                            <h2>{thread.title}</h2>
-                            <p>{thread.body}</p>
-                            </div>
-                    )
+                <div className="paper">
+                    {this.props.reduxState.getDetailsReducer.map((thread) => {
+                        return (
 
-                })}
+                            <Paper className="paper" elevation={3} variant='outlined'>
+                                <div key={thread.id}>
+                                    <div className="title">
+                                        <h1>{thread.title}</h1>
+                                    </div>
+                                    <div className="test">
+                                        <p>{thread.body}</p>
+                                    </div>
+                                </div>
+                            </Paper>
+
+                        )
+
+                    })}
+                </div>
             </div>
-            )
+        )
     }
 }
 

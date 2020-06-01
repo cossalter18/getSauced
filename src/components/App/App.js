@@ -20,7 +20,7 @@ import NewPost from '../NewPost/NewPost'
 import UserFav from '../UserFav/UserFav'
 import Profile from '../Profile/Profile'
 import BlogInfo from '../BlogInfo/BlogInfo'
-
+import Edit from '../Edit/Edit'
 
 import './App.css';
 
@@ -81,6 +81,11 @@ class App extends Component {
             path="/blog/:id"
             render={({item})=> <BlogInfo item={item} />}
             component={BlogInfo}
+            />
+            <ProtectedRoute
+            exact
+            path="/edit"
+            component={Edit}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

@@ -34,13 +34,17 @@ h2 {
     margin-bottom: 15px;
     background-color:#4eafeb;
     border-radius: 10px;
-    white-space: pre-wrap;      
-   white-space: -moz-pre-wrap;   
-  
-    
-   word-wrap: break-word;   
+    /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.child {
+ white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
 
 
 /* 

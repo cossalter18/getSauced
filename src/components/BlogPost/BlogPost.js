@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import "./BlogPost.css";
-import { Button } from "react-bootstrap"
 import { Container } from '@material-ui/core'
-import { actionChannel } from "redux-saga/effects";
+
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -74,6 +73,7 @@ class BlogPost extends Component {
               <div className="container">
                 <Container fixed >
                   <div className="child">
+                 
                     <div key={thread.id}>
                       <h2 onClick={() => this.handleClickShow(thread.id)}>{thread.title}</h2>
                       <p>{thread.body}</p>
@@ -83,6 +83,7 @@ class BlogPost extends Component {
                       <div />
                       <button variant="danger" onClick={(event) => this.handleDelete(event, thread)}>Delete</button>
                     </div>
+                 
 
                   </div>
                 </Container>

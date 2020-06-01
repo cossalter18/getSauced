@@ -1,0 +1,88 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router'
+import './Edit.css'
+import { TextField } from "@material-ui/core";
+import Button from 'react-bootstrap/Button'
+
+class Edit extends Component {
+
+    state = {
+        post: {
+            title: '',
+            body: ''
+        }
+
+    }
+
+    handleChange = (event, property) => {
+        this.setState({
+            post: {
+                ...this.state.post,
+                [property]: event.target.value
+            }
+        })
+    }
+
+    handleUpdate = () => {
+        this.props.dispatch({ type: 'UPDATE_POST', payload: this.state.post })
+        this.setState({
+            state: this.state
+        })
+        this.props.history.push('/info')
+    }
+
+
+    render() {
+        return (
+            <>
+                <div className="edit">
+                    <h2>Edit</h2>
+                    <div className="nav-right">
+                        <button type="button" onClick={this.handleClick} class="btn btn-link btn-sm">
+                            Update!
+            </button>
+                    </div>
+                    {this.props.reduxState.getDetailsReducer.map((thread) => {
+                        return (
+                            <div key={thread.id}>
+                            </div>
+                        )
+                    }
+                    )
+                    }
+                </div>
+                <div className='title'>
+                    <TextField className="title"
+
+                        type="text"
+                        color="primary"
+                        name="title"
+                        placeholder="Title"
+                        onChange={(event) => this.handleChange(event, "title")}
+                    ></TextField>
+                </div>
+                <br />
+                <div>
+                    <textarea
+                        className="body"
+                        placeholder="Ravioli Ravioli, Give me the formuoli..."
+                        rows={5}
+                        rowsmax={5}
+                        cols={100}
+                        onChange={(event) => this.handleChange(event, "body")}
+                    />
+                </div>
+                <Button className="postButton" onClick={this.postBlog}>Share the secrets</Button>
+
+
+
+
+            </>
+        )
+    }
+}
+
+
+const putStateOnProps = (reduxState) => ({ reduxState })
+export default withRouter(connect(putStateOnProps)(Edit))
