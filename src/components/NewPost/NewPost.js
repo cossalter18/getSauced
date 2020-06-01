@@ -5,7 +5,7 @@ import { TextField } from "@material-ui/core";
 import Button from 'react-bootstrap/Button'
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-import { TextareaAutosize } from '@material-ui/core'
+
 
 
 import './NewPost.css'

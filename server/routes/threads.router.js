@@ -20,6 +20,20 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/blog/:id', (req, res) => {
+  const queryText = `SELECT * FROM "post" WHERE "id" = $1;`;
+  console.log('=================>>>>>>GET ROUTE FOR DETAILS', req.params.id);
+  
+  pool.query(queryText, [req.params.id])
+  .then((result) =>{
+    console.log('GET DETAILS!!!!!!!!', req.params.id);
+    res.send(result.rows);
+  }).catch((error) => {
+    res.sendStatus(500)
+    console.log(error);
+    
+  })
+})
 
 //Get all from favorites
 

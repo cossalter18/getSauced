@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import "./BlogPost.css";
-import {Button} from "react-bootstrap"
+import { Button } from "react-bootstrap"
 import { Container } from '@material-ui/core'
 import { actionChannel } from "redux-saga/effects";
 
@@ -20,6 +20,8 @@ class BlogPost extends Component {
 
   componentDidMount() {
     this.getThreads();
+
+
   }
 
   handleClick = () => {
@@ -27,19 +29,11 @@ class BlogPost extends Component {
     this.props.history.push('/new')
   };
 
-  handleClickFavorite = (event, thread) => {
-    const {target: {value}} = event
-    this.setState({
-      user_id: value,
-      title: value,
-      body: value
-    })
-    console.log('handleCLick for favorite', thread.user_id);
-    this.props.dispatch({type: "ADD_FAVORITE", payload: this.state})
-  }
 
-  handleClickShow = () => {
+
+  handleClickShow = (id) => {
     console.log('titleClicked');
+    this.props.history.push(`/blog/${id}`)
   }
 
   handleDelete = (event, thread) => {
@@ -56,7 +50,6 @@ class BlogPost extends Component {
 
   }
 
-  
   //dispatch to watcher to get threads
 
   getThreads = () => {
@@ -75,27 +68,25 @@ class BlogPost extends Component {
         </div>
         <b>Thread:</b>
         <p>{JSON.stringify(this.props.reduxState.threadReducer)}</p>
-        {this.props.reduxState.threadReducer.map((thread, i) => {
+        {this.props.reduxState.threadReducer.map((thread, index) => {
           return (
             <>
               <div className="container">
-              <Container fixed >
-                <div className="child">
-                  <div key={thread.id}>
-                    <h2 onClick={this.handleClickShow}>{thread.title}</h2>
-                    <p>{thread.body}</p>
-                    <div className="content">
-                    <p>created by: {thread.created}</p>
+                <Container fixed >
+                  <div className="child">
+                    <div key={thread.id}>
+                      <h2 onClick={() => this.handleClickShow(thread.id)}>{thread.title}</h2>
+                      <p>{thread.body}</p>
+                      <div className="content">
+                        <p>created by: {thread.created}</p>
                       </div>
-                    <div/>
-                    <button onClick={(event) => this.handleClickFavorite(event, thread)}>Add to Favorites</button>
-                    <button onClick={this.handleEdit}>Edit</button>
-                    <button variant="danger" onClick={(event) => this.handleDelete(event, thread)}>Delete</button>
+                      <div />
+                      <button variant="danger" onClick={(event) => this.handleDelete(event, thread)}>Delete</button>
+                    </div>
+
                   </div>
-              
+                </Container>
               </div>
-              </Container>
-            </div>
             </>
           )
         }

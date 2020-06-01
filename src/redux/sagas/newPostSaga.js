@@ -5,7 +5,8 @@ function* addPost(action) {
   try {
    console.log("action.payload!!!!!!!!!!!!!", action.payload);
    const response = yield axios.post('/api/threads', action.payload);
-   yield put({ type: "SET_THREADS", payload: response.data})
+   yield put({ type: "GET_THREADS"})
+
   }catch (error){
       console.log(error);
   }
