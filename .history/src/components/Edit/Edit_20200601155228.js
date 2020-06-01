@@ -9,7 +9,6 @@ class Edit extends Component {
 
     state = {
         post: {
-            id: '',
             title: '',
             body: ''
         }
@@ -17,7 +16,6 @@ class Edit extends Component {
     }
 
     handleChange = (event, property) => {
-        console.log(event.target.value)
         this.setState({
             post: {
                 ...this.state.post,
@@ -31,8 +29,6 @@ class Edit extends Component {
         this.setState({
             state: this.state
         })
-        console.log(this.state);
-        
         this.props.history.push('/info')
     }
 
@@ -43,7 +39,7 @@ class Edit extends Component {
                 <div className="edit">
                     <h2>Edit</h2>
                     <div className="nav-right">
-                        <button type="button" onClick={this.handleUpdate} className="btn btn-link btn-sm">
+                        <button type="button" onClick={this.handleClick} class="btn btn-link btn-sm">
                             Update!
             </button>
                     </div>
@@ -77,7 +73,9 @@ class Edit extends Component {
                         onChange={(event) => this.handleChange(event, "body")}
                     />
                 </div>
-               
+                <Button className="postButton" onClick={this.postBlog}>Share the secrets</Button>
+
+
 
 
             </>

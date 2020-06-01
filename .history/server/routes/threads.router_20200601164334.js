@@ -78,9 +78,8 @@ router.put('/', (req, res) =>{
   .then((result) => {
     res.sendStatus(200)
   }).catch((error) => {
-    res.sendStatus(500)
+    res.sendStatus
   })
+  
 })
-
-
 module.exports = router;

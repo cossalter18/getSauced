@@ -10,7 +10,7 @@ import rootSaga from './redux/sagas'; // imports ./redux/sagas/index.js
 
 import App from './components/App/App';
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
 
 const sagaMiddleware = createSagaMiddleware();
 

@@ -31,8 +31,7 @@ h2 {
     box-sizing: border-box;
     width: 75%;
     height: 10rem;
-    margin-top: 35px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     background-color:#4eafeb;
     border-radius: 10px;
     /* white-space: nowrap; */
@@ -44,7 +43,8 @@ h2 {
  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
+   -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 

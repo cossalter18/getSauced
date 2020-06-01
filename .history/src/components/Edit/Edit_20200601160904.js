@@ -9,7 +9,6 @@ class Edit extends Component {
 
     state = {
         post: {
-            id: '',
             title: '',
             body: ''
         }
@@ -17,7 +16,6 @@ class Edit extends Component {
     }
 
     handleChange = (event, property) => {
-        console.log(event.target.value)
         this.setState({
             post: {
                 ...this.state.post,
@@ -31,8 +29,6 @@ class Edit extends Component {
         this.setState({
             state: this.state
         })
-        console.log(this.state);
-        
         this.props.history.push('/info')
     }
 

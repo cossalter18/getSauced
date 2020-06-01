@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   pool
     .query(queryText)
     .then((response) => {
-        //console.log("===========>>", response.rows)
+        console.log("===========>>", response.rows)
       res.send(response.rows);
     })
     .catch((error) => {
@@ -70,17 +70,4 @@ router.delete('/:id', (req, res) => {
     
   })
 })
-
-router.put('/', (req, res) =>{
-  const queryText = `UPDATE "post" SET "title" = $1, "body" = $2, WHERE "id" = $3;`;
-  console.log('!!!!!!!!!!!!!!!!!!!!!', req.body);
-  pool.query(queryText, [req.body.title, req.body.body, req.params.id])
-  .then((result) => {
-    res.sendStatus(200)
-  }).catch((error) => {
-    res.sendStatus(500)
-  })
-})
-
-
 module.exports = router;

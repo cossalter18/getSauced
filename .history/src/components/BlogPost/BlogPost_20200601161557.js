@@ -67,7 +67,7 @@ class BlogPost extends Component {
             </button>
         </div>
         <b>Thread:</b>
-        {/* <p>{JSON.stringify(this.props.reduxState.threadReducer)}</p> */}
+        <p>{JSON.stringify(this.props.reduxState.threadReducer)}</p>
         {this.props.reduxState.threadReducer.map((thread, index) => {
           return (
             <>

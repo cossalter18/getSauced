@@ -62,12 +62,12 @@ class BlogPost extends Component {
     return (
       <div>
         <div className="nav-right">
-          <button type="button" onClick={this.handleClick} className="btn btn-link btn-sm">
+          <Button type="button" onClick={this.handleClick} class="btn btn-link btn-sm">
             New Post!
-            </button>
+            </Button>
         </div>
         <b>Thread:</b>
-        {/* <p>{JSON.stringify(this.props.reduxState.threadReducer)}</p> */}
+        <p>{JSON.stringify(this.props.reduxState.threadReducer)}</p>
         {this.props.reduxState.threadReducer.map((thread, index) => {
           return (
             <>

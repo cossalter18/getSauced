@@ -9,7 +9,6 @@ class Edit extends Component {
 
     state = {
         post: {
-            id: '',
             title: '',
             body: ''
         }

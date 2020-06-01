@@ -25,6 +25,6 @@ export default function* rootSaga() {
     deleteSaga(),
     getFavoritesSaga(),
     getDetailsSaga(),
-  //  updatePostSaga()
+   
   ]);
 }

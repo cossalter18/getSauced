@@ -77,10 +77,7 @@ router.put('/', (req, res) =>{
   pool.query(queryText, [req.body.title, req.body.body, req.params.id])
   .then((result) => {
     res.sendStatus(200)
-  }).catch((error) => {
-    res.sendStatus(500)
-  })
+  }).catch((error) => {})
+  
 })
-
-
 module.exports = router;
