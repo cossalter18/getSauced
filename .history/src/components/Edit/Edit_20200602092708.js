@@ -32,7 +32,7 @@ class Edit extends Component {
             state: this.state
         })
         console.log(this.state);
-        console.log(this.props)
+        console.log(this.props.)
         
         this.props.history.push('/info')
     }

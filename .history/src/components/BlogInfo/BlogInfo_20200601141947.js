@@ -23,15 +23,13 @@ class BlogInfo extends Component {
     }
 
     handleEdit = (id) => {
-        console.log('Click Edit Button', id);
+        console.log('Click Edit Button');
         this.props.history.push(`/edit`)
         
     }
 
 
     render() {
-      
-        
         return (
             <div className="info">
                 <h2>Sauce-y</h2>

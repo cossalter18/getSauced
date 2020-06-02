@@ -30,7 +30,7 @@ class BlogInfo extends Component {
 
 
     render() {
-      
+        console.log('!!!!!!!!!!!!!!!!!', this.state.post);
         
         return (
             <div className="info">

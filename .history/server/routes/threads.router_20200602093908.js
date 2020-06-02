@@ -41,7 +41,7 @@ router.get('/blog/:id', (req, res) => {
  * POST route template
  */
 
-router.post("/blog/:id", (req, res) => {
+router.post(`/blog/${:id}`, (req, res) => {
 const newPost = `INSERT INTO "post"("title", "body", user_id)
 VALUES ($1, $2, $3);`;
 console.log("!!!!!!!!!", req.body)

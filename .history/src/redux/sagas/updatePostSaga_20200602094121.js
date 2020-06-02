@@ -5,7 +5,7 @@ function* updatePost(action) {
     console.log('UpdatePost!!!!!!!!!', action.payload.id);
 
     try {
-        const response = yield axios.put(`/api/threads/blog/${action.payload.id}`, { title: action.payload.title, body: action.payload.body })
+        const response = yield axios.put(`/api/threads/blog/${id}${action.payload.id}`, { title: action.payload.title, body: action.payload.body })
         console.log('IN UPDATE POST PUT', response);
 
     } catch (error) {

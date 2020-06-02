@@ -2,7 +2,7 @@ import axios from "axios";
 import { takeEvery } from "redux-saga/effects";
 
 function* updatePost(action) {
-    console.log('UpdatePost!!!!!!!!!', action.payload.id);
+    console.log('UpdatePost!!!!!!!!!', action.payload.title);
 
     try {
         const response = yield axios.put(`/api/threads/blog/${action.payload.id}`, { title: action.payload.title, body: action.payload.body })

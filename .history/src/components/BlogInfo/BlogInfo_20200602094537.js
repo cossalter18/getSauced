@@ -30,8 +30,6 @@ class BlogInfo extends Component {
 
 
     render() {
-      
-        
         return (
             <div className="info">
                 <h2>Sauce-y</h2>

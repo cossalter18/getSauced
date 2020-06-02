@@ -30,7 +30,6 @@ class BlogInfo extends Component {
 
 
     render() {
-      
         
         return (
             <div className="info">

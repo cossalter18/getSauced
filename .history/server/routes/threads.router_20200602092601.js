@@ -41,7 +41,7 @@ router.get('/blog/:id', (req, res) => {
  * POST route template
  */
 
-router.post("/blog/:id", (req, res) => {
+router.post("/", (req, res) => {
 const newPost = `INSERT INTO "post"("title", "body", user_id)
 VALUES ($1, $2, $3);`;
 console.log("!!!!!!!!!", req.body)
@@ -71,7 +71,7 @@ router.delete('/:id', (req, res) => {
   })
 })
 
-router.put('/', (req, res) =>{
+router.put('/:id', (req, res) =>{
   const queryText = `UPDATE "post" SET "title" = $1, "body" = $2, WHERE "id" = $3;`;
   console.log('!!!!!!!!!!!!!!!!!!!!!', req.body);
   pool.query(queryText, [req.body.title, req.body.body, req.params.id])
