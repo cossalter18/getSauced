@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
     const queryText = `INSERT INTO "favorite"("post_id", "user_id")
     VALUES ($1, $2);`;
     console.log('*********************', req.body)
-    const values = [req.body.id, req.body.id];
+    const values = [req.body.id, req.body.user.id];
     pool.query(queryText, values)
         .then((response) => {
             res.sendStatus(201)

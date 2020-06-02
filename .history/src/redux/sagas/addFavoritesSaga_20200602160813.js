@@ -7,7 +7,7 @@ function* addFavorites() {
         console.log("!!! FAVORITES !!! ========>", response.data);
         yield put({ type: "SET_FAVORITES", payload: response.data });
     } catch (error) {
-        console.log("Error in FAVORITES POST", error);
+        console.log("Error in FAVORITES PUT", error);
     }
 }
 

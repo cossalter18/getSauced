@@ -42,7 +42,7 @@ router.get('/blog/:id', (req, res) => {
  */
 
 router.post('/', (req, res) => {
-const newPost = `INSERT INTO "post"("title", "body", "user_id")
+const newPost = `INSERT INTO "post"("title", "body", "user_id)
 VALUES ($1, $2, $3);`;
 console.log("!!!!!!!!!", req.body)
 const values = [req.body.title, req.body.body, req.user.id]

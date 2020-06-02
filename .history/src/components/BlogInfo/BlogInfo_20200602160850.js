@@ -15,8 +15,7 @@ class BlogInfo extends Component {
 
     state = {
         favorite: {
-            
-            post_id: this.props.match.params.id,
+            id: this.props.match.params.id,
             user_id: this.props.reduxState.user.id
         }
     }

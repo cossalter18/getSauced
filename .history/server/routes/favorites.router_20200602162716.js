@@ -22,10 +22,10 @@ router.get('/', (req, res) => {
  * POST route for favorites
  */
 router.post('/', (req, res) => {
-    const queryText = `INSERT INTO "favorite"("post_id", "user_id")
+    const queryText = `INSERT INTO "favorite"("id", "user_id")
     VALUES ($1, $2);`;
     console.log('*********************', req.body)
-    const values = [req.body.id, req.body.id];
+    const values = [req.body.id, req.user.id];
     pool.query(queryText, values)
         .then((response) => {
             res.sendStatus(201)
@@ -33,6 +33,8 @@ router.post('/', (req, res) => {
         .catch((error) => {
             console.log('error in FAVORITES POST', error)
         })
+
+
 });
 
 module.exports = router;
