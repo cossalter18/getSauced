@@ -24,12 +24,8 @@ class BlogInfo extends Component {
 
     handleEdit = () => {
         console.log('Click Edit Button');
-        if (this.props.reduxState.user.id === thread.user_id) {
-            this.props.history.push(`/edit/${this.props.reduxState.getDetailsReducer.id}`)
-        } else {
-            alert('Not your sauce? Not your edit. Later mate')
-        }
-       
+        
+        this.props.history.push(`/edit/${this.props.reduxState.getDetailsReducer.id}`)
         
     }
 

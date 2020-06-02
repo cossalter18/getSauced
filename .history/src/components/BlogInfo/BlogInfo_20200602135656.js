@@ -27,7 +27,7 @@ class BlogInfo extends Component {
         if (this.props.reduxState.user.id === thread.user_id) {
             this.props.history.push(`/edit/${this.props.reduxState.getDetailsReducer.id}`)
         } else {
-            alert('Not your sauce? Not your edit. Later mate')
+            alert('Not your sauce? Not your edit. Later mate...')
         }
        
         

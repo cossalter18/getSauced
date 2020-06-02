@@ -25,11 +25,11 @@ class BlogInfo extends Component {
     handleEdit = () => {
         console.log('Click Edit Button');
         if (this.props.reduxState.user.id === thread.user_id) {
-            this.props.history.push(`/edit/${this.props.reduxState.getDetailsReducer.id}`)
+            this.props.dispatch({ type: 'DELETE_POST', payload: thread.id })
         } else {
-            alert('Not your sauce? Not your edit. Later mate')
+            alert('Trying to destroy someones sauce? Not cool...')
         }
-       
+        this.props.history.push(`/edit/${this.props.reduxState.getDetailsReducer.id}`)
         
     }
 
