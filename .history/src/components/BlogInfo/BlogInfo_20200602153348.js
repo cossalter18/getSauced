@@ -79,7 +79,6 @@ class BlogInfo extends Component {
                             <p>{this.props.reduxState.getDetailsReducer.body}</p>
                             <div className="created">
                             {this.props.reduxState.getDetailsReducer.created}
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,12 @@ import "./UserFav.css"
 
 class UserFav extends Component {
 
+ state ={
+   favorite: {
+     id:'',
+     user_id:''
+   }
+ }
 
   //we will render all the favorites here for the user
   componentDidMount = () => {

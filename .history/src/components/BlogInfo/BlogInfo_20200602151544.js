@@ -38,7 +38,7 @@ class BlogInfo extends Component {
     addToFavorites = () => {
         console.log('ADDED TO FAVORITES');
         this.props.dispatch({ type: "ADD_FAVORITES", payload: this.state.favorite})
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$", this.state.favorite);
+        console.log('');
         
     }
 
@@ -77,9 +77,6 @@ class BlogInfo extends Component {
                         </div>
                         <div className="test">
                             <p>{this.props.reduxState.getDetailsReducer.body}</p>
-                            <div className="created">
-                            {this.props.reduxState.getDetailsReducer.created}
-                            </div>
                         </div>
                     </div>
                 </div>

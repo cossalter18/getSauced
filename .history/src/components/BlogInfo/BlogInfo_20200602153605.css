@@ -19,8 +19,7 @@
 
 .paper {
     margin: auto;
-    /* width: 50%; */
-    max-width: 75%;
+    width: 50%;
     border: 3px solid #4eafeb;
     padding: 10px;
 }
@@ -32,5 +31,5 @@
 .created {
     font-size: 9px;
     float: right;
-   
+    margin-bottom: ;
 }

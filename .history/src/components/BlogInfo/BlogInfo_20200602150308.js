@@ -12,16 +12,8 @@ import { actionChannel } from 'redux-saga/effects';
 
 class BlogInfo extends Component {
 
-
-    state = {
-        favorite: {
-            id: this.props.match.params.id,
-            user_id: this.props.reduxState.user.id
-        }
-    }
-
     componentDidMount() {
-        console.log('BLOGINFO COMPONENT DID MOUNT', this.props.reduxState.user.id, this.props.match.params.id);
+        console.log('BLOGINFO COMPONENT DID MOUNT');
         this.getPost()
     }
 
@@ -37,9 +29,7 @@ class BlogInfo extends Component {
 
     addToFavorites = () => {
         console.log('ADDED TO FAVORITES');
-        this.props.dispatch({ type: "ADD_FAVORITES", payload: this.state.favorite})
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$", this.state.favorite);
-        
+        this.props.dispatch({ type: "ADD_FAVORITES", payload: this.state})
     }
 
     handleEdit = () => {
@@ -77,9 +67,6 @@ class BlogInfo extends Component {
                         </div>
                         <div className="test">
                             <p>{this.props.reduxState.getDetailsReducer.body}</p>
-                            <div className="created">
-                            {this.props.reduxState.getDetailsReducer.created}
-                            </div>
                         </div>
                     </div>
                 </div>

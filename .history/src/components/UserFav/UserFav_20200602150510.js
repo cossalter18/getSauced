@@ -9,6 +9,9 @@ import "./UserFav.css"
 
 class UserFav extends Component {
 
+ state ={
+   favorite 
+ }
 
   //we will render all the favorites here for the user
   componentDidMount = () => {
@@ -27,7 +30,7 @@ class UserFav extends Component {
       <>
       <div>
         <h2>UserFav</h2>
-        <p>{JSON.stringify(this.props)}</p>
+        <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p>
       </div>
      <GridList className="list" cellHeight={"auto"} spaceing={10} cols={5}>
        {this.props.reduxState.favoritesReducer.map((thread) => (
