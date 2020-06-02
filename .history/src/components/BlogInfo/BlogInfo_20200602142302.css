@@ -12,18 +12,7 @@
 .btn-primary {
     color: #fff;
     background-color: #2E4C80;
-    background-color: #4eafeb;
+    background-color: cutom-color;
     border-color: #2E4C80;
-    border-color: #4eafeb;
-}
-
-.paper {
-    margin: auto;
-    width: 50%;
-    border: 3px solid #4eafeb;
-    padding: 10px;
-}
-
-.info {
-    padding-top: 15px;
+    border-color: cutom-cor;
 }

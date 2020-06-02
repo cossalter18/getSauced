@@ -14,6 +14,7 @@ class BlogInfo extends Component {
     componentDidMount() {
         console.log('BLOGINFO COMPONENT DID MOUNT');
         this.getPost()
+
     }
 
     handleClick = () => {

@@ -12,18 +12,16 @@
 .btn-primary {
     color: #fff;
     background-color: #2E4C80;
-    background-color: #4eafeb;
+    background-color: #4eafeb
     border-color: #2E4C80;
-    border-color: #4eafeb;
+    border-color: cutom-cor;
 }
 
 .paper {
-    margin: auto;
+    flex: auto;
     width: 50%;
-    border: 3px solid #4eafeb;
-    padding: 10px;
-}
-
-.info {
-    padding-top: 15px;
+     margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
 }

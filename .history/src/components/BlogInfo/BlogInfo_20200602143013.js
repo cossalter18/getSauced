@@ -14,6 +14,7 @@ class BlogInfo extends Component {
     componentDidMount() {
         console.log('BLOGINFO COMPONENT DID MOUNT');
         this.getPost()
+
     }
 
     handleClick = () => {
@@ -33,10 +34,14 @@ class BlogInfo extends Component {
         } else {
             alert('Not your sauce? Not your edit. Later mate')
         }
+
+
     }
 
 
     render() {
+
+
         return (
             <>
                 <div>

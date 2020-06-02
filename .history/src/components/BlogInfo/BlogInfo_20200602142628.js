@@ -14,6 +14,7 @@ class BlogInfo extends Component {
     componentDidMount() {
         console.log('BLOGINFO COMPONENT DID MOUNT');
         this.getPost()
+
     }
 
     handleClick = () => {
@@ -33,37 +34,53 @@ class BlogInfo extends Component {
         } else {
             alert('Not your sauce? Not your edit. Later mate')
         }
+       
+        
     }
 
 
     render() {
+      
+        
         return (
             <>
-                <div>
-                    <ButtonToolbar className="toolbar" aria-label="Toolbar with button groups">
-                        <ButtonGroup size="sm" className="mr-2" aria-label="First group">
-                            <Button variant="link" onClick={this.handleClick}>Back to posts</Button>
-                        </ButtonGroup>
+            <div>
+                <ButtonToolbar className="toolbar" aria-label="Toolbar with button groups">
+                    <ButtonGroup size="sm" className="mr-2" aria-label="First group">
+                        <Button variant="link" onClick={this.handleClick}>Back to posts</Button>
+                    </ButtonGroup>
                         <ButtonGroup size="sm" className="mr-2" aria-label="Second group">
                             <Button variant="link" onClick={this.handleEdit}>Edit</Button>
-                        </ButtonGroup>
-                        <ButtonGroup size="sm" aria-label="Third group">
+                    </ButtonGroup>
+                    <ButtonGroup  aria-label="Third group">
                             <Button variant="link" onClick={this.addToFavorites}>Favorite</Button>
-                        </ButtonGroup>
-                    </ButtonToolbar>
+
+                    </ButtonGroup>
+                </ButtonToolbar>
+            </div>
+            <div className="info">
+                <h2>Sauce-y</h2>
+               
+                <div className="paper">
+                    
+
+                            <Paper className="paper" elevation={3} variant='outlined'>
+                             
+                                    <div className="title">
+                                        {/* <p>{JSON.stringify(this.props.reduxState.getDetailsReducer)}</p> */}
+                                        <h1>{this.props.reduxState.getDetailsReducer.title}</h1>
+                                    </div>
+                                    <div className="test">
+                                        <p>{this.props.reduxState.getDetailsReducer.body}</p>
+                                    </div>
+                              
+                            </Paper>
+
+                        
+
+                
                 </div>
-                <div className="info">
-                    <h2>Sauce-y</h2>
-                    <div className="paper">
-                        <div className="title">
-                            {/* <p>{JSON.stringify(this.props.reduxState.getDetailsReducer)}</p> */}
-                            <h1>{this.props.reduxState.getDetailsReducer.title}</h1>
-                        </div>
-                        <div className="test">
-                            <p>{this.props.reduxState.getDetailsReducer.body}</p>
-                        </div>
-                    </div>
-                </div>
+            </div>
             </>
         )
     }

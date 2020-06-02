@@ -1,0 +1,14 @@
+.title {
+    text-align: center;
+}
+
+.toolbar {
+    padding-bottom: 15px;
+    nav-right: auto;
+    float: right;
+    background-color: red;
+}
+
+.btn-primary {
+    background-color: red;
+}
