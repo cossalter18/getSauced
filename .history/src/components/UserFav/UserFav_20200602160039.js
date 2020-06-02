@@ -27,7 +27,7 @@ class UserFav extends Component {
       <>
       <div>
         <h2>UserFav</h2>
-        <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p>
+        <p>{JSON.stringify(this.props.f)}</p>
       </div>
      <GridList className="list" cellHeight={"auto"} spaceing={10} cols={5}>
        {this.props.reduxState.favoritesReducer.map((thread) => (
