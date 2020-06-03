@@ -26,11 +26,11 @@ class AboutPage extends Component {
                 <b>{item.title}</b>
               </div>
               <div>
-                <img src={item.image} alt={item.title} className="img"></img>
+                <img src={item.image} alt={item.title}></img>
                 </div>
-             <div className="ing">
-               {/* {item.extendedIngredients} */}
-               </div>
+              <div className="summary">
+                {item.summary}
+                </div>
               <div className="summary">
                 {item.instructions}
               </div>

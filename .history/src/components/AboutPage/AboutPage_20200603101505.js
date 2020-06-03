@@ -29,7 +29,6 @@ class AboutPage extends Component {
                 <img src={item.image} alt={item.title} className="img"></img>
                 </div>
              <div className="ing">
-               {/* {item.extendedIngredients} */}
                </div>
               <div className="summary">
                 {item.instructions}

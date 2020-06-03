@@ -17,20 +17,14 @@ class AboutPage extends Component {
     return (
       <div>
         {/* <p>{JSON.stringify(this.props.reduxState.randomReducer)}</p> */}
-        <h2>Random Sauce!</h2>
-        <div className="randomContainer">
+        <h2>FILL INFO</h2>
+        <div className="container">
         {this.props.reduxState.randomReducer.map((item) => {
           return (
             <div key={item.id}>
-              <div className='title'>
-                <b>{item.title}</b>
-              </div>
-              <div>
-                <img src={item.image} alt={item.title} className="img"></img>
+              <div className="summary">
+                {item.summary}
                 </div>
-             <div className="ing">
-               {/* {item.extendedIngredients} */}
-               </div>
               <div className="summary">
                 {item.instructions}
               </div>

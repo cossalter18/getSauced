@@ -1,14 +1,14 @@
 import axios from "axios";
 import { put, takeEvery } from "redux-saga/effects";
 
-//https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random
+https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random
 
 function* getRandom(action) {
     console.log("IN API REQUEST:", action)
     try {
         const response = yield axios({
             "method": "GET",
-            "url": "",
+            "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random",
             "headers": {
                 "content-type": "application/octet-stream",
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -19,7 +19,7 @@ function* getRandom(action) {
                 "tags": "sauce"
             }
         })
-        yield put({ type: "SET_RANDOM", payload: response.data.recipes });
+        yield put({ type: "SET_RANDOM", payload: response.data });
     } catch (error) {
         console.log("Error in GET", error);
     }
