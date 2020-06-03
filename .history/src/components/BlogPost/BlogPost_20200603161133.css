@@ -42,7 +42,7 @@ h2 {
 
 .child {
  white-space: nowrap;
-  overflow: hidden;
+  overflow: auto;
   text-overflow: ellipsis;
   
 }

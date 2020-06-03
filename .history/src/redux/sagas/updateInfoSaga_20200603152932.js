@@ -3,7 +3,7 @@ import { put, takeEvery } from "redux-saga/effects";
 
 function* updateInfo() {
     try {
-        const response = yield axios.put("/api/user");
+        const response = yield axios.put("/api/threads");
         console.log("++++++++++++++", response.data)
         yield put({ type: "SET_THREADS", payload: response.data });
 

@@ -43,6 +43,7 @@ h2 {
 .child {
  white-space: nowrap;
   overflow: hidden;
+  max-lines: 2;
   text-overflow: ellipsis;
   
 }

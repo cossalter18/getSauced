@@ -54,7 +54,7 @@ class NewPost extends Component {
     return (
       <div>
         <h2>New Post</h2>
-        {/* <p>{JSON.stringify(this.props.reduxState.user)}</p> */}
+        <p>{JSON.stringify(this.props.reduxState.user)}</p>
         <div className="inputs">
           <MuiThemeProvider theme={myTheme}>
             <div className='title'>
