@@ -6,8 +6,12 @@ import "./BlogInfo.css";
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
+import { actionChannel } from 'redux-saga/effects';
+
+
 
 class BlogInfo extends Component {
+
 
     state = {
         favorite: {
@@ -35,7 +39,8 @@ class BlogInfo extends Component {
     addToFavorites = () => {
         console.log('ADDED TO FAVORITES');
         this.props.dispatch({ type: "ADD_FAVORITES", payload: this.state.favorite})
-        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$", this.state.favorite);  
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$", this.state.favorite);
+        
     }
 
     handleEdit = () => {
@@ -46,6 +51,7 @@ class BlogInfo extends Component {
             alert('Not your sauce? Not your edit. Later mate')
         }
     }
+
 
     render() {
         return (
@@ -73,7 +79,7 @@ class BlogInfo extends Component {
                         <div className="test">
                             <p>{this.props.reduxState.getDetailsReducer.body}</p>
                             <div className="created">
-                               {this.props.reduxState.getDetailsReducer.created}
+                                date.toTimeString(){this.props.reduxState.getDetailsReducer.created}
                             </div>
                         </div>
                     </div>

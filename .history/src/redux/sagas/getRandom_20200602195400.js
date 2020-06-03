@@ -3,7 +3,8 @@ import { put, takeEvery } from "redux-saga/effects";
 
 
 
-
+//ADD THE M AT THE END OF RANDOM IN THE RUL
+//REMOVED TO STOP API CALLS
 
 
 // https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random
