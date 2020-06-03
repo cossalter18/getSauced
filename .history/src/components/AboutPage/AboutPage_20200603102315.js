@@ -34,9 +34,7 @@ class AboutPage extends Component {
               <div className="summary">
                 {item.instructions}
               </div>
-              <div className="source">
-                <p> Get it straight from the source: {item.sourceUrl}</p>
-                </div>
+              <div className=
             </div>
           )
         })}
