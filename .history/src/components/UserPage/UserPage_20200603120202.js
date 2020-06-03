@@ -20,10 +20,10 @@ const UserPage = (props) => (
   </div>
   <div className="welcome">
     <div>
-    <h2 className='rightPlace'>You've came to the right place</h2>
+    <h2>You've came to the right place</h2>
         <p>Looking for the latest sauce? The new hot marinade for those Beef Tips your grilling up? You have come to the right place. Here at Get Sauced we are focused on providing a community driven sauce collection. whether you are here for a new recipe or to contribute to the growing sauce community we welcome everyone with open arms! </p>
         <p>You can dive right in by exploring the Blog Post page. You can find recipes here to suit your needs.</p>
-        <p>If nothing on the Blog Post page catches your eye go ahead and try our Get a Sauce tab. This tab will provide you with a random sauce recipe, so we suggest you use it before you go to the grocery store!</p>
+        <p>If nothing on the Blog Post page catches your eye go ahead and try our Get a Sauce</p>
       </div>
   </div>
   </>

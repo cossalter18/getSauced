@@ -34,8 +34,8 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 0 1px 0 #000;
-    text-indent: 20px;
-    font-weight: 400;
+    text-indent: 10px;
+    font-weight: 700;
     cursor: pointer;
 }
 

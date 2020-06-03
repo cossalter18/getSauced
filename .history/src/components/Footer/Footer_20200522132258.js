@@ -8,7 +8,7 @@ import './Footer.css'
 
 const Footer = () => (
   <footer>
-    &copy; Mike Cossalter
+    &copy; Prime Digital Academy
   </footer>
 );
 
