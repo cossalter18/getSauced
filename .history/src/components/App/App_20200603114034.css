@@ -1,7 +1,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
-
+    background-image: url("../Image/GetSauced.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 .alert {

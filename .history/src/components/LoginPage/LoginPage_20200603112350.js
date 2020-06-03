@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './LoginPage.css'
 
 class LoginPage extends Component {
   state = {
@@ -32,7 +31,7 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="loginBody">
+      <div>
         {this.props.errors.loginMessage && (
           <h2
             className="alert"
@@ -41,22 +40,36 @@ class LoginPage extends Component {
             {this.props.errors.loginMessage}
           </h2>
         )}
-        <form className="form-3" onSubmit={this.login}>
+        <form onSubmit={this.login}>
           <h1>Login</h1>
           <div>
             <label htmlFor="username">
-              Username
-              <input type="text" name="username" value={this.state.username} onChange={this.handleInputChangeFor('username')}/>
+              Username:
+              <input type="text"
+                name="username"
+                value={this.state.username}
+                onChange={this.handleInputChangeFor('username')}
+              />
             </label>
           </div>
           <div>
             <label htmlFor="password">
-              Password
-              <input type="password" name="password" value={this.state.password} onChange={this.handleInputChangeFor('password')}/>
+              Password:
+              <input
+                type="password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleInputChangeFor('password')}
+              />
             </label>
           </div>
           <div>
-            <input className="log-in" type="submit" name="submit" value="Log In"/>
+            <input
+              className="log-in"
+              type="submit"
+              name="submit"
+              value="Log In"
+            />
           </div>
         </form>
         <center>
