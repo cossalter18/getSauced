@@ -74,7 +74,8 @@ class BlogInfo extends Component {
                         <div className="test">
                             <p>{this.props.reduxState.getDetailsReducer.body}</p>
                             <div className="created">
-                               {moment(this.props.reduxState.getDetailsReducer.created).startOf('hour').fromNow()}
+                                let formattedDate= moment
+                               {this.props.reduxState.getDetailsReducer.created}
                             </div>
                         </div>
                     </div>

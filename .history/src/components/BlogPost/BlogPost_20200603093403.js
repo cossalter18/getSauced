@@ -80,7 +80,7 @@ class BlogPost extends Component {
                       <h2 onClick={() => this.handleClickShow(thread.id)}>{thread.title}</h2>
                       <p>{thread.body}</p>
                       <div className="content">
-                        <p>posted: {moment(thread.created).format('MMM Do YYYY')}</p>
+                        <p>created by: {moment(thread.created)}</p>
                       </div>
                       <div />
                       <button variant="danger" onClick={(event) => this.handleDelete(event, thread)}>Delete</button>
