@@ -41,3 +41,7 @@ app.listen(PORT, () => {
 });
 
 
+app.get('/api/sauce', (req, res) => {
+  console.log('GET SAUCE ROUTE');
+  
+})

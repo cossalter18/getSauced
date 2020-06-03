@@ -6,7 +6,6 @@ import threadReducer from './threadsReducer'
 import {reducer as formReducer} from 'redux-form'
 import favoritesReducer from './favoritesReducer'
 import getDetailsReducer from './getDetailsReducer'
-import randomReducer from './randomReducer'
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -22,7 +21,7 @@ const rootReducer = combineReducers({
   formReducer,
   favoritesReducer,
   getDetailsReducer,
-  randomReducer
+  r
 });
 
 export default rootReducer;

@@ -15,9 +15,9 @@ class AboutPage extends Component {
   render() {
     return (
       <div>
-        <p>{JSON.stringify(this.props.reduxState.getRandom)}</p>
+        <p>{JSON.stringify(this.props.reduxState.randomReducer)}</p>
         <h2>FILL INFO</h2>
-        {/* <h1>{this.props.reduxState.randomReducer}</h1> */}
+        <
       </div>
     )
   }

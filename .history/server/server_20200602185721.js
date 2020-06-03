@@ -41,3 +41,7 @@ app.listen(PORT, () => {
 });
 
 
+app.get('/random', (req, res) => {
+  console.log('');
+  
+})
