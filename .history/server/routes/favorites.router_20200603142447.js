@@ -6,7 +6,7 @@ const router = express.Router();
  * GET route for favorites
  */
 router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM "favorite" WHERE "user_id" = "user_id";`;
+    const queryText = `SELECT * FROM "favorites" WHERE "user_id" = "user_id";`;
     pool
         .query(queryText)
         .then((response) => {

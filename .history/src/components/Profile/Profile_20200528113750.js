@@ -40,6 +40,7 @@ class Profile extends Component {
         <div className="welcome">
           <h2>Update Your Info</h2>
           <p>{JSON.stringify(this.props.reduxState.user.fname)}</p>
+          <p>{JSON.stringify}</p>
         </div>
         <div className="profileInputs">
           <input type="text" value={this.props.reduxState.user.fname} placeholder="First Name" name="fname" onChange={this.updateInfo}></input>

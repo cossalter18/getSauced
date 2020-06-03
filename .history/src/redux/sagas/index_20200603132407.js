@@ -30,6 +30,6 @@ export default function* rootSaga() {
     updatePostSaga(),
     addFavoritesSaga(),
     getRandomSaga()
-    
+    addFavoritesSaga
   ]);
 }

@@ -6,7 +6,7 @@ const router = express.Router();
  * GET route for favorites
  */
 router.get('/', (req, res) => {
-    const queryText = `SELECT * FROM "favorite" WHERE "user_id" = "user_id";`;
+    const queryText = `SELECT * FROM "favorites" WHERE "user_id" = "user_id;`;
     pool
         .query(queryText)
         .then((response) => {
@@ -22,10 +22,10 @@ router.get('/', (req, res) => {
  * POST route for favorites
  */
 router.post('/', (req, res) => {
-    console.log('*********************', req.body.user_id)
+    console.log('*********************', req.body.post_id)
     const queryText = `INSERT INTO "favorite"("post_id", "user_id")
     VALUES ($1, $2);`;
-    const values = [req.body.post_id, req.body.user_id];
+    const values = [req.body, req.user.id];
     pool.query(queryText, values)
         .then((response) => {
             res.sendStatus(201)
