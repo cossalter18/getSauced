@@ -102,5 +102,6 @@ class BlogPost extends Component {
 // }
 // export default withRouter(connect(reduxStateToProps)(BlogPost));
 
+
 const putStateOnProps = (reduxState) => ({ reduxState });
 export default withRouter(connect(putStateOnProps)(BlogPost));

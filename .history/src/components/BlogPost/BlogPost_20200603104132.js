@@ -83,6 +83,8 @@ class BlogPost extends Component {
                       <div />
                       <button variant="danger" onClick={(event) => this.handleDelete(event, thread)}>Delete</button>
                     </div>
+                 
+
                   </div>
                 </Container>
               </div>
@@ -101,6 +103,7 @@ class BlogPost extends Component {
 //   }
 // }
 // export default withRouter(connect(reduxStateToProps)(BlogPost));
+
 
 const putStateOnProps = (reduxState) => ({ reduxState });
 export default withRouter(connect(putStateOnProps)(BlogPost));
