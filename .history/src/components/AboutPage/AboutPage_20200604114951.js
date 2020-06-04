@@ -30,7 +30,7 @@ class AboutPage extends Component {
                {/* {item.extendedIngredients} */}
                </div>
               <div className="summary">
-                <pre>{item.instructions}</pre>
+                <pre{item.instructions}
               </div>
               <div className="source">
                 <p> Get it straight from the source: {item.sourceUrl}</p>
