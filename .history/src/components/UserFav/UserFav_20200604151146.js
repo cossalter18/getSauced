@@ -33,16 +33,18 @@ class UserFav extends Component {
           <h2 className="sauce">Secret Sauces</h2>
           {/* <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p> */}
         </div>
-       
+        <GridList className="list" rows={4} spaceing={5} cols={1}>
           {this.props.reduxState.favoritesReducer.map((thread) => (
             
                   <div className="scroll">
                     <h2>{thread.title}</h2>
                     <h6>{thread.body}</h6>
                   </div>
-              
+                </List>
+              </Paper>
+            </GridListTile>
           ))}
-     
+        </GridList>
       </>
     );
   }

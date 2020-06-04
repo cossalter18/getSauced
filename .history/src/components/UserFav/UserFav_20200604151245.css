@@ -19,13 +19,13 @@
 
 .scroll {
     overflow: scroll;
- margin: auto;
+ 
     box-sizing: border-box;
     width: 75%;
     height: 10rem;
     margin-top: 35px;
     margin-bottom: 8px;
-    /* background-color:#4eafeb; */
+    background-color:#4eafeb;
     border-radius: 10px;
     /* white-space: nowrap; */
   overflow: auto;
