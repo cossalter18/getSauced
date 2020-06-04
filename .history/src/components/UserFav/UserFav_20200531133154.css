@@ -1,0 +1,13 @@
+.paper {
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: red;
+}
+
+
+
+.tile {
+    background-color: #4eafeb;
+    margin: 5%;
+    border-radius: 5px;
+}
