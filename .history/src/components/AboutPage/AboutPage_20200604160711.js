@@ -33,7 +33,7 @@ class AboutPage extends Component {
               <div dangerouslySetInnerHTML={{__html: sanitizer(item.instructions)}} className="summary">
               </div>
               <div className="source">
-                {/* <p> Get it straight from the source: {item.sourceUrl}</p> */}
+                <p> Get it straight from the source: {item.sourceUrl}</p>
                 <a href={item.sourceUrl}> See the source</a>
                 </div>
             </div>
