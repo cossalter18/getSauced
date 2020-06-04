@@ -50,7 +50,10 @@ h2 {
   font-family: "SignPainter";
 }
 
-
+.container h2:before { 
+    content: "Read: ";
+<span class="Apple-converted-space">    color: #F00;</span>
+}
 
 
 .child {

@@ -35,23 +35,11 @@ h2 {
     margin-bottom: 8px;
     background-color:#4eafeb;
     border-radius: 10px;
-    /* opacity: 0.5; */
+    opacity: 0.5;
     /* white-space: nowrap; */
   overflow: auto;
   text-overflow: ellipsis;
- }
-
-.container h2:hover{
-  color: white;
-  font-family: "SignPainter";
 }
-
-.container h2 {
-  font-family: "SignPainter";
-}
-
-
-
 
 .child {
  white-space: nowrap;

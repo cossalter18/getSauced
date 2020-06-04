@@ -28,16 +28,10 @@
     margin-bottom: 8px;
     /* background-color:#4eafeb; */
     border-radius: 2px;
-    border-color: #4eafeb;
-    border-style: inset;
+    border-color: ;
     /* white-space: nowrap; */
   overflow: auto;
   text-overflow: ellipsis;
-}
-
-.removeBut {
-    float: right;
-    margin: 10px;
 }
 
 

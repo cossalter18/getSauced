@@ -27,11 +27,11 @@ class UserFav extends Component {
   // }
   removeFav = (event, thread) => {
     console.log('remove clicked', thread.id);
-    // if (this.props.reduxState.user.id === thread.user_id) {
-    //   this.props.dispatch({ type: 'DELETE_POST', payload: thread.id })
-    // } else {
-    //   alert('Trying to destroy someones sauce? Not cool...')
-    // }
+    if (this.props.reduxState.user.id === thread.user_id) {
+      this.props.dispatch({ type: 'DELETE_POST', payload: thread.id })
+    } else {
+      alert('Trying to destroy someones sauce? Not cool...')
+    }
   }
     
   
@@ -44,7 +44,7 @@ class UserFav extends Component {
           {/* <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p> */}
         </div>
        
-          {this.props.reduxState.favoritesReducer.map((thread, index) => (
+          {this.props.reduxState.favoritesReducer.map((thread) => (
             
                   <div className="scroll">
                     <h2>{thread.title}</h2>

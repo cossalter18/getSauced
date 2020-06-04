@@ -50,9 +50,10 @@ h2 {
   font-family: "SignPainter";
 }
 
-
-
-
+h2:before { 
+    content: "Read: ";
+<span class="Apple-converted-space">    color: #F00;</span>
+}
 .child {
  white-space: nowrap;
   overflow: hidden;

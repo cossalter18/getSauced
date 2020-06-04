@@ -44,7 +44,7 @@ class UserFav extends Component {
           {/* <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p> */}
         </div>
        
-          {this.props.reduxState.favoritesReducer.map((thread, index) => (
+          {this.props.reduxState.favoritesReducer.map((thread) => (
             
                   <div className="scroll">
                     <h2>{thread.title}</h2>

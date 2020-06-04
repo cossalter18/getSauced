@@ -30,6 +30,8 @@ h2 {
 .container {
     box-sizing: border-box;
     width: 75%;
+    
+    
     height: 10rem;
     margin-top: 35px;
     margin-bottom: 8px;
@@ -39,19 +41,12 @@ h2 {
     /* white-space: nowrap; */
   overflow: auto;
   text-overflow: ellipsis;
- }
+  
+}
 
 .container h2:hover{
   color: white;
-  font-family: "SignPainter";
-}
-
-.container h2 {
-  font-family: "SignPainter";
-}
-
-
-
+  
 
 .child {
  white-space: nowrap;

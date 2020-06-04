@@ -41,7 +41,7 @@ class UserFav extends Component {
       <>
         <div>
           <h2 className="sauce">Secret Sauces</h2>
-          {/* <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p> */}
+          <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p>
         </div>
        
           {this.props.reduxState.favoritesReducer.map((thread, index) => (
