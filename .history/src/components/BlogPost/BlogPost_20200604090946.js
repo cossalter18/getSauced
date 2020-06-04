@@ -76,7 +76,6 @@ class BlogPost extends Component {
                  
                    
                       <h2 onClick={() => this.handleClickShow(thread.id)}>{thread.title}</h2>
-                    <div key={thread.id}>
                       <p>{thread.body}</p>
                       <div className="content">
                         <p>posted: {moment(thread.created).format('MMM Do YYYY')}</p>

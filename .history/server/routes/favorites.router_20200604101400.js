@@ -9,9 +9,9 @@ router.get('/', (req, res) => {
     //make a join between post & fav
     const queryText = `SELECT "post_id", "body", "title", "post"."user_id", "favorite"."id" AS favorite_id FROM "favorite"
 JOIN "post" ON "post"."id"="favorite"."post_id"
-WHERE "post"."user_id" = $1;`;
+WHERE "post"."user_id" = 2;`;
     pool
-        .query(queryText, [req.user.id])
+        .query(queryText)
         .then((response) => {
             console.log('!!!!!!!!!!!!!', response.rows)
             res.send(response.rows)

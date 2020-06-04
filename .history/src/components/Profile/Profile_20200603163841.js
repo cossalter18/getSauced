@@ -45,7 +45,7 @@ class Profile extends Component {
           <input type="text" defaultValue={this.props.reduxState.user.fname} placeholder="First Name" name="fname" onChange={this.updateInfo}></input>
           <input type="text" defaultValue={this.props.reduxState.user.lname} placeholder="Last Name" name="lname" onChange={this.updateInfo}></input>
           <input type="text" defaultValue={this.props.reduxState.user.email} placeholder="Email" name="email" onChange={this.updateInfo}></input>
-          <input type="text" defaultValue={this.props.reduxState.user.zip} placeholder="Zip" name="zip" onChange={this.updateInfo}></input>
+          <input type="text" defaultvalue={this.props.reduxState.user.zip} placeholder="Zip" name="zip" onChange={this.updateInfo}></input>
         </div>
         <div>
           <button className="profileButton" onClick={this.handleClick}>

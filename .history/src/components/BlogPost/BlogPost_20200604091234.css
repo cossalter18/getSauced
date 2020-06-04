@@ -1,0 +1,61 @@
+.nav-right {
+  float: right;
+  margin-right: 30px;
+ 
+}
+
+h2 {
+  cursor: pointer;
+}
+
+.content {
+  font-size: 10px;
+}
+
+.button{
+  margin: 100px;
+  padding: 25px;
+}
+
+
+/* .container {
+   width: 75%;
+    height: 10rem;
+    margin: auto;
+    background-color:#4eafeb;
+    border-radius: 10px;
+} */
+
+
+.container {
+    box-sizing: border-box;
+    width: 75%;
+    height: 10rem;
+    margin-top: 35px;
+    margin-bottom: 8px;
+    background-color:#4eafeb;
+    border-radius: 10px;
+    /* white-space: nowrap; */
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.child {
+ white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+
+/* 
+.child {
+ flex: 1;
+    height: auto;
+    margin: auto;
+    border-color: red;
+    border-width: 10px;
+} */
+
+
+

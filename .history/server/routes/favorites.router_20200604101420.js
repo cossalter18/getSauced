@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 JOIN "post" ON "post"."id"="favorite"."post_id"
 WHERE "post"."user_id" = $1;`;
     pool
-        .query(queryText, [req.user.id])
+        .query(queryText, )
         .then((response) => {
             console.log('!!!!!!!!!!!!!', response.rows)
             res.send(response.rows)
