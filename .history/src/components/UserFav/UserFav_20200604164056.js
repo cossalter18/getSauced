@@ -28,7 +28,7 @@ class UserFav extends Component {
   removeFav = (event, thread) => {
     console.log('remove clicked', thread);
     
-    this.props.dispatch({ type: 'DELETE_FAV', payload: thread.post_id })
+    //   this.props.dispatch({ type: 'DELETE_FAVORITE', payload: thread })
     
   }
     

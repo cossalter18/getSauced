@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     console.log('!!!!!!!!!', req.params.id)
-    const thread = `DELETE FROM "favorite" WHERE "id" = $1;`;
+    const thread = `DELETE FROM "post" WHERE "id" = $1;`;
     pool.query(thread, [req.params.id])
         .then((response) => {
             res.sendStatus(200)

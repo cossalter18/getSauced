@@ -27,9 +27,11 @@ class UserFav extends Component {
   // }
   removeFav = (event, thread) => {
     console.log('remove clicked', thread);
-    
-    this.props.dispatch({ type: 'DELETE_FAV', payload: thread.post_id })
-    
+    // if (this.props.reduxState.user.id === thread.user_id) {
+    //   this.props.dispatch({ type: 'DELETE_POST', payload: thread.id })
+    // } else {
+    //   alert('Trying to destroy someones sauce? Not cool...')
+    // }
   }
     
   

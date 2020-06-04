@@ -25,11 +25,13 @@ class UserFav extends Component {
   //   console.log('Favorite Clicked');
   //   this.props.history.push(`/show/${id}`)
   // }
-  removeFav = (event, thread) => {
-    console.log('remove clicked', thread);
-    
-    this.props.dispatch({ type: 'DELETE_FAV', payload: thread.post_id })
-    
+  removeFav = (event, post_id) => {
+    console.log('remove clicked', post_id);
+    // if (this.props.reduxState.user.id === thread.user_id) {
+    //   this.props.dispatch({ type: 'DELETE_POST', payload: thread.id })
+    // } else {
+    //   alert('Trying to destroy someones sauce? Not cool...')
+    // }
   }
     
   
@@ -39,7 +41,7 @@ class UserFav extends Component {
       <>
         <div>
           <h2 className="sauce">Secret Sauces</h2>
-          <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p>
+          {/* <p>{JSON.stringify(this.props.reduxState.favoritesReducer)}</p> */}
         </div>
        
           {this.props.reduxState.favoritesReducer.map((thread, index) => (
@@ -47,7 +49,7 @@ class UserFav extends Component {
                   <div key={thread.id}className="scroll">
                     <h2>{thread.title}</h2>
                     <h6>{thread.body}</h6>
-                    <button className="removeBut" onClick={(event) =>this.removeFav(event, thread)}>Remove</button>
+                    <button className="removeBut" onClick={(event) =>this.removeFav(event, post_id)}>Remove</button>
                   </div>
               
           ))}
