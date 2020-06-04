@@ -16,7 +16,7 @@ class AboutPage extends Component {
     return (
       <div>
         {/* <p>{JSON.stringify(this.props.reduxState.randomReducer)}</p> */}
-        <h2 className="rando">Random Sauce!</h2>
+        <h2>Random Sauce!</h2>
         <div className="randomContainer">
         {this.props.reduxState.randomReducer.map((item) => {
           return (

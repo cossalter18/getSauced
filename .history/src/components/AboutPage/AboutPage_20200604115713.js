@@ -16,7 +16,7 @@ class AboutPage extends Component {
     return (
       <div>
         {/* <p>{JSON.stringify(this.props.reduxState.randomReducer)}</p> */}
-        <h2 className="rando">Random Sauce!</h2>
+        <h2>Random Sauce!</h2>
         <div className="randomContainer">
         {this.props.reduxState.randomReducer.map((item) => {
           return (
@@ -30,7 +30,8 @@ class AboutPage extends Component {
              <div className="ing">
                {/* {item.extendedIngredients} */}
                </div>
-              <div dangerouslySetInnerHTML={{__html: sanitizer(item.instructions)}} className="summary">
+              <div className="summary">
+                {item.instructions}
               </div>
               <div className="source">
                 <p> Get it straight from the source: {item.sourceUrl}</p>
