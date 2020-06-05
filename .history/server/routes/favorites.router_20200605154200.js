@@ -6,7 +6,7 @@ const router = express.Router();
  * GET route for favorites
  */
 router.get('/', (req, res) => {
-    //this join is to ensure the logged in user is getting only their favorited sauces
+    //make a join between post & fav
     const queryText = `SELECT "post_id", "body", "title", "post"."user_id", "favorite"."id" AS favorite_id FROM "favorite"
 JOIN "post" ON "post"."id"="favorite"."post_id"
 WHERE "post"."user_id" = $1;`;

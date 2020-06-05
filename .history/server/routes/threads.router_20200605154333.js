@@ -65,7 +65,6 @@ router.delete('/:id', (req, res) => {
   })
 })
 
-//PUT route that handles the update of sauce posts
 router.put('/:id', (req, res) =>{
   const queryText = `UPDATE "post" SET "title" = $1, "body" = $2 WHERE "id" = $3;`;
   console.log('!!!!!!!!!!!!!!!!!!!!!', req.body);

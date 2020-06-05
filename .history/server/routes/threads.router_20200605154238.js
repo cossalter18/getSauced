@@ -2,8 +2,10 @@ const express = require("express");
 const pool = require("../modules/pool");
 const router = express.Router();
 
+/**
+ * GET route template
+ */
 
-//GET Route to retrieve all post ordered by newest for rendering to DOM
 router.get('/', (req, res) => {
   const queryText = `SELECT * FROM "post" ORDER BY "created" DESC;`;
   pool
@@ -18,7 +20,6 @@ router.get('/', (req, res) => {
     });
 });
 
-//GET Route to get more information for the blog info page about certain sauce
 router.get('/blog/:id', (req, res) => {
   const queryText = `SELECT * FROM "post" WHERE "id" = $1;`;
   console.log('=================>>>>>>GET ROUTE FOR DETAILS', req.params.id);
@@ -34,7 +35,11 @@ router.get('/blog/:id', (req, res) => {
 })
 
 
-//POST route for new sauces added
+
+/**
+ * POST route template
+ */
+
 router.post('/', (req, res) => {
 const newPost = `INSERT INTO "post"("title", "body", "user_id")
 VALUES ($1, $2, $3);`;
@@ -65,7 +70,6 @@ router.delete('/:id', (req, res) => {
   })
 })
 
-//PUT route that handles the update of sauce posts
 router.put('/:id', (req, res) =>{
   const queryText = `UPDATE "post" SET "title" = $1, "body" = $2 WHERE "id" = $3;`;
   console.log('!!!!!!!!!!!!!!!!!!!!!', req.body);

@@ -32,7 +32,7 @@ class AboutPage extends Component {
              <div className="ing">
                {/* {item.extendedIngredients} */}
                </div>
-               {/* using dompurify to sanitize our response from our api */}
+               //
               <div dangerouslySetInnerHTML={{__html: sanitizer(item.instructions)}} className="summary">
               </div>
               <div className="source">
@@ -43,6 +43,8 @@ class AboutPage extends Component {
           )
         })}
         </div>
+
+
       </div>
     )
   }

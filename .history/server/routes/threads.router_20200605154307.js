@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     });
 });
 
-//GET Route to get more information for the blog info page about certain sauce
+//GET Route to get more information for the blog info page 
 router.get('/blog/:id', (req, res) => {
   const queryText = `SELECT * FROM "post" WHERE "id" = $1;`;
   console.log('=================>>>>>>GET ROUTE FOR DETAILS', req.params.id);
@@ -34,7 +34,11 @@ router.get('/blog/:id', (req, res) => {
 })
 
 
-//POST route for new sauces added
+
+/**
+ * POST route template
+ */
+
 router.post('/', (req, res) => {
 const newPost = `INSERT INTO "post"("title", "body", "user_id")
 VALUES ($1, $2, $3);`;
@@ -65,7 +69,6 @@ router.delete('/:id', (req, res) => {
   })
 })
 
-//PUT route that handles the update of sauce posts
 router.put('/:id', (req, res) =>{
   const queryText = `UPDATE "post" SET "title" = $1, "body" = $2 WHERE "id" = $3;`;
   console.log('!!!!!!!!!!!!!!!!!!!!!', req.body);

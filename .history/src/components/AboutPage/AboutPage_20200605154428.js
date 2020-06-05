@@ -8,16 +8,15 @@ import dompurify from 'dompurify';
 
 class AboutPage extends Component {
 
-  //fires our random sauce API Call to spoonacular
   componentDidMount() {
     this.props.dispatch({ type: 'GET_RANDOM' })
   }
 
   render() {
-    //used to sanitize the response from spoonacular to prevent xss attacks.
     let sanitizer=dompurify.sanitize;
     return (
       <div>
+        {/* <p>{JSON.stringify(this.props.reduxState.randomReducer)}</p> */}
         <h2 className="rando">Random Sauce!</h2>
         <div className="randomContainer">
         {this.props.reduxState.randomReducer.map((item) => {
@@ -32,7 +31,6 @@ class AboutPage extends Component {
              <div className="ing">
                {/* {item.extendedIngredients} */}
                </div>
-               {/* using dompurify to sanitize our response from our api */}
               <div dangerouslySetInnerHTML={{__html: sanitizer(item.instructions)}} className="summary">
               </div>
               <div className="source">
@@ -43,6 +41,8 @@ class AboutPage extends Component {
           )
         })}
         </div>
+
+
       </div>
     )
   }
