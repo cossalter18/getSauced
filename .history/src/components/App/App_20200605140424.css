@@ -1,6 +1,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
+    background-image: url('../Image/test.png');
+    background-repeat: no-repeat;
 }
 
 .alert {

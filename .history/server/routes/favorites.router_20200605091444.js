@@ -9,8 +9,7 @@ router.get('/', (req, res) => {
     //make a join between post & fav
     const queryText = `SELECT "post_id", "body", "title", "post"."user_id", "favorite"."id" AS favorite_id FROM "favorite"
 JOIN "post" ON "post"."id"="favorite"."post_id"
-WHERE "post"."user_id" = $1;`;
-console.log("LOOOOOOOOOOOOOOOOOOOOOOK", req.user.id)
+WHERE "post"."user_id" = $!;`;
     pool
         .query(queryText, [req.user.id])
         .then((response) => {
@@ -41,7 +40,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     console.log('!!!!!!!!!', req.params.id)
-    const thread = `DELETE FROM "favorite" WHERE "post_id" = $1;`;
+    const thread = `DELETE FROM "favorite" WHERE "id" = $1;`;
     pool.query(thread, [req.params.id])
         .then((response) => {
             res.sendStatus(200)
@@ -49,6 +48,7 @@ router.delete('/:id', (req, res) => {
         .catch((error) => {
             console.log('ERROR DELETING!!!!!!', error);
             res.sendStatus(500)
+
         })
 })
 

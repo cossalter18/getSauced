@@ -3,7 +3,7 @@ import { put, takeEvery } from "redux-saga/effects";
 
 function* getFavorites() {
   try {
-    const response = yield axios.get("/api/favorites/");
+    const response = yield axios.get("/api/favorites");
     console.log("!!! FAVORITES !!! ========>", response.data);
     yield put({ type: "SET_FAVORITES", payload: response.data });
   } catch (error) {

@@ -1,0 +1,49 @@
+/* .paper {
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: red;
+}
+
+
+
+.tile {
+    background-color: white;
+    margin: 2%;
+    border-radius: 5px;
+} */
+
+.list {
+    scroll-behavior: smooth;
+    
+}
+
+.scroll {
+    overflow: scroll;
+    /* scroll-behavior: smooth; */
+ margin: auto;
+    box-sizing: border-box;
+    width: 75%;
+    height: 10rem;
+    margin-top: 35px;
+    margin-bottom: 8px;
+    /* background-color:#4eafeb; */
+    border-radius: 2px;
+    border-color: #4eafeb;
+    border-style: inset;
+    /* white-space: nowrap; */
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.removeBut {
+    float: right;
+    margin: 10px;
+}
+
+
+.sauce {
+    text-align: center;
+     font-family: "SignPainter";
+      font-size: 50px;
+       font-weight: 100;
+}
