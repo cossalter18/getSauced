@@ -8,7 +8,7 @@ function* getRandom(action) {
     try {
         const response = yield axios({
             "method": "GET",
-            "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random",
+            "url": "",
             "headers": {
                 "content-type": "application/octet-stream",
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
